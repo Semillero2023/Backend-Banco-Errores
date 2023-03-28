@@ -19,4 +19,5 @@ jobs:
           MESSAGING_SENDER_ID: ${{ secrets.MESSAGING_SENDER_ID }}
           APP_ID: ${{ secrets.APP_ID }}
         with:
+          BRANCH: gh-pages # The branch the action should deploy to.
           folder: build
