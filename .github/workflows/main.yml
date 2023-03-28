@@ -19,6 +19,4 @@ jobs:
           MESSAGING_SENDER_ID: ${{ secrets.MESSAGING_SENDER_ID }}
           APP_ID: ${{ secrets.APP_ID }}
         with:
-          BRANCH: gh-pages
-          FOLDER: build
           BUILD_SCRIPT: yarn && yarn run build
