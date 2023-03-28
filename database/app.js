@@ -31,10 +31,10 @@ errorForm.addEventListener('submit', e => {
     const p11 = Solucion.value;
     const p12 = Fuentes.value;
 
-    if (text != '') {
+    if (p1 != '') {
         addError(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12);
-        errorInput.value = "";
-        loadError();
+        //errorInput.value = "";
+        //loadError();
     }
 });
 
