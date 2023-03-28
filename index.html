@@ -1,30 +1,62 @@
 <html>
-	<head>
-		<title>Test page</title>
-	</head>
-	<body>
-    <p style="font-size:100px">Hola Mundo 2</p>
-    <script type="module">
-		// Import the functions you need from the SDKs you need
-		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
-		// TODO: Add SDKs for Firebase products that you want to use
-		// https://firebase.google.com/docs/web/setup#available-libraries
-		//import { getFirestore } from "https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js";
 
-		// Your web app's Firebase configuration
-		const firebaseConfig = {
-		apiKey: process.env.API_KEY,
-		authDomain: "banco-errores.firebaseapp.com",
-		projectId: "banco-errores",
-		storageBucket: "banco-errores.appspot.com",
-		messagingSenderId: process.env.MESSAGING_SENDER_ID,
-		appId: process.env.APP_ID
-		};
+<head>
+	<title>Test page</title>
+</head>
 
-		// Initialize Firebase
-		const app = initializeApp(firebaseConfig);
-		// Initialize Cloud Firestore and get a reference to the service
-		//const db = getFirestore(app);
-	</script>
-	</body>
+<body>
+	<p style="font-size:100px">Hola Mundo 2</p>
+	<script src="database/initialization.js"></script>
+
+	<div id="app">
+		<form id="error-form" class="hidden">
+			<label>Nombre Error:</label>
+			<input id="Nombre_Error" type="text" placeholder="" />
+			<label>Tipo Error:</label>
+			<input id="Tipo_Error" type="text" placeholder="" />
+
+			<label>Codigo Retorno:</label>
+			<input id="Codigo_Retorno" type="text" placeholder="" />
+
+			<label>ID Mensaje Error:</label>
+			<input id="ID_Mensaje_Error" type="text" placeholder="" />
+
+			<label>Complejidad:</label>
+			<input id="Complejidad" type="text" placeholder="" />
+
+			<label>Reportado Por:</label>
+			<input id="Reportado_Por" type="text" placeholder="" />
+
+			<label>Fecha:</label>
+			<input id="Fecha" type="text" placeholder="" />
+
+			<label>Resultado Esperado:</label>
+
+			<input id="Resultado_Esperado" type="text" placeholder="" />
+
+			<label>Resultado Obtenido:</label>
+
+			<input id="Resultado_Obtenido" type="text" placeholder="" />
+
+			<label>Descripcion Error:</label>
+
+			<input id="Descripcion_Error" type="text" placeholder="" />
+
+			<label>Solucion:</label>
+
+			<input id="Solucion" type="text" placeholder="" />
+
+			<label>Fuentes:</label>
+
+			<input id="Fuentes" type="text" placeholder="" />
+
+			<label>Utilidad:</label>
+
+			<input id="Utilidad" type="text" placeholder="" />
+
+		</form>
+
+	</div>
+</body>
+
 </html>
