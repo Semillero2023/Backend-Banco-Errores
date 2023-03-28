@@ -20,4 +20,4 @@ jobs:
           APP_ID: ${{ secrets.APP_ID }}
         with:
           branch: gh-pages
-          folder: /
+          folder: build
