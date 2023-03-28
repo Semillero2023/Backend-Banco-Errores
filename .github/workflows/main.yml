@@ -18,3 +18,5 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
           MESSAGING_SENDER_ID: ${{ secrets.MESSAGING_SENDER_ID }}
           APP_ID: ${{ secrets.APP_ID }}
+        with:
+          folder: build
