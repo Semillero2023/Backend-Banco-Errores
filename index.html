@@ -8,7 +8,7 @@
 	<p style="font-size:100px">Hola Mundo</p>
 
 	<div id="app">
-		<form id="error-form" class="hidden">
+		<form id="error-form">
 			<label>Nombre Error:</label>
 			<input id="Nombre_Error" type="text" placeholder="" />
 			<label>Tipo Error:</label>
@@ -21,7 +21,7 @@
 			<input id="ID_Mensaje_Error" type="text" placeholder="" />
 
 			<label>Complejidad:</label>
-			<input id="Complejidad" type="text" placeholder="" />
+			<input id="Complejidad" type="number" placeholder="" />
 
 			<label>Reportado Por:</label>
 			<input id="Reportado_Por" type="text" placeholder="" />
@@ -30,33 +30,30 @@
 			<input id="Fecha" type="text" placeholder="" />
 
 			<label>Resultado Esperado:</label>
-
 			<input id="Resultado_Esperado" type="text" placeholder="" />
 
 			<label>Resultado Obtenido:</label>
-
 			<input id="Resultado_Obtenido" type="text" placeholder="" />
 
 			<label>Descripcion Error:</label>
-
 			<input id="Descripcion_Error" type="text" placeholder="" />
 
 			<label>Solucion:</label>
-
 			<input id="Solucion" type="text" placeholder="" />
 
 			<label>Fuentes:</label>
-
 			<input id="Fuentes" type="text" placeholder="" />
 
 			<label>Utilidad:</label>
-
 			<input id="Utilidad" type="text" placeholder="" />
 
+			<input type="submit"/>
 		</form>
-
 	</div>
 	
+	<script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js"></script>
+	<script src="database/app.js" type="module"></script>
 	<!-- <script type="module" src="database/initialization.js"></script> -->
 </body>
 
