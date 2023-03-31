@@ -16,7 +16,7 @@ jobs:
         uses: fregante/setup-git-user@v2
 
       - name: Setup URL
-        run: git remote set-url origin git@github.com:Semillero2023/Backend-Banco-Errores.git
+        run: git remote set-url origin https://github.com/Semillero2023/Backend-Banco-Errores.git
 
       - name: Install and Build
         run: |
