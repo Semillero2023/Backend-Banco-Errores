@@ -9,10 +9,8 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout & Setup github user
         uses: actions/checkout@v3
-
-      - name: Setup github user
         uses: fregante/setup-git-user@v2
 
       - name: Install and Build
