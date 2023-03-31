@@ -32,9 +32,11 @@ export const addNewError = async (e) => {
     const p11 = document.getElementById("Solucion").value;
     const p12 = document.getElementById("Fuentes").value;
 
-    if (p3 != '') {
+    if (p3 !== '') {
         addError(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12);
         //loadError();
+    } else {
+        alert("Campo Codigo_Retorno vacío")
     }
 
 };
