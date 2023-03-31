@@ -1,5 +1,9 @@
+|* ------------------- *|
+|* Estructura de error *|
+|* ------------------- *|
+
 {
-	"Nombre_Error" :            STRING,
+    "Nombre_Error" :            STRING,
     "Tipo_Error":               STRING (FS|AB),
     "Codigo_Retorno" :          STRING,
     "ID_Mensaje_Error" :        STRING,
@@ -14,15 +18,17 @@
     "Utilidad" :                    0
 }
 
-Carga individual por formulario -> ENVIAR OBJETO JSON A BACK
-Carga masiva -> Array
-Pagina principal -> Get Array de JSON
-Busquedas -> Get Array
+CONSULTAS:
+- Carga individual por formulario		LISTO 30/03/2023
+- Pagina principal -> Get Array de errores	P
+- Carga masiva por Excel			P
+- UPDATE de contador de Utilidad		P
+- Busquedas -> Get Array
 
 
-|*                         *|
+|* ----------------------- *|
 |* Estructura de busquedas *|
-|*                         *|
+|* ----------------------- *|
 
 {
 	"ID_Mensaje_Error": 	STRING,
