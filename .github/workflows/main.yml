@@ -14,8 +14,8 @@ jobs:
 
       - name: Setup github user
         run: |
-          git config user.email "semillerog12023@gmail.com"
-          git config user.name "Semillero2023"
+          git config --global user.email "semillerog12023@gmail.com"
+          git config --global user.name "Semillero2023"
 
       - name: Install and Build
         run: |
