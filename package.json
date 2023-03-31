@@ -1,8 +1,7 @@
 {
   "name": "back-banco",
   "version": "0.1.0",
-  "homepage": "https://semillero2023.github.io/Backend-Banco-Errores/",
-  "private": true,
+  "homepage": "https://semillero2023.github.io/Backend-Banco-Errores",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
