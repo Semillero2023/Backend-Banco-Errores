@@ -44,7 +44,7 @@ export const addNewError = async (e) => {
 async function addError(nombre, tipo, codigo, id, complejidad, alumno, fecha,
     esperado, obtenido, descripcion, solucion, fuentes) {
     try {
-        const errorNew = {
+        const errorNew = [{
             Nombre_Error: nombre,
             Tipo_Error: tipo,
             Codigo_retorno: codigo,
@@ -58,21 +58,27 @@ async function addError(nombre, tipo, codigo, id, complejidad, alumno, fecha,
             Solucion: solucion,
             Fuentes: fuentes,
             Utilidad: 0
-        };
+        }];
 
-        const response = await insert(errorNew);
-        console.log(response);
-        console.log("Document written with ID: ", response.id);
+        insert(errorNew);
+        //const response = await insert(errorNew);
+        //console.log(response);
+        //console.log("Document written with ID: ", response.id);
     } catch (error) {
         console.error(error);
     }
 }
 
-const insert = async (item) => {
+const insert = (items) => {
     try {
         //const response = await db.collection("banco").add(item);
-        const response = await addDoc(collectionReference, item);
-        return response;
+        items.forEach(async newError => {
+            const response = await addDoc(collectionReference, newError);
+            console.log(response);
+            console.log("Document written with ID: ", response.id);
+        });
+        //const response = await addDoc(collectionReference, items);
+        //return response;
     } catch (error) {
         throw new Error(error);
     }
