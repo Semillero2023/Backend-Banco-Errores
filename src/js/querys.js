@@ -1,5 +1,5 @@
 import { db } from './initialize.js';
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs, query, orderBy } from "firebase/firestore";
 
 // const errorForm = document.getElementById("error-form");
 // const Nombre_Error = document.getElementById("Nombre_Error");
@@ -47,7 +47,7 @@ async function addError(nombre, tipo, codigo, id, complejidad, alumno, fecha,
         const errorNew = [{
             Nombre_Error: nombre,
             Tipo_Error: tipo,
-            Codigo_retorno: codigo,
+            Codigo_Retorno: codigo,
             ID_Mensaje_Error: id,
             Complejidad: complejidad,
             Reportado_Por: alumno,
@@ -84,4 +84,21 @@ const insert = (items) => {
     }
 }
 
+export const showErrors = async () => {
+    try {
+        //const container = document.getElementById("container");
+        //.orderBy("ID_Mensaje_Error", "asc") 
+        const q = query(collectionReference, orderBy("ID_Mensaje_Error", "asc"));
+        const querySnapshot = await getDocs(q);
+        return querySnapshot;
+        //console.log(querySnapshot);
+        // querySnapshot.forEach((doc) => {
+        //    //console.log(`${doc.id} => ${doc.data()}`);
+        //    console.log(doc.id, " => ", doc.data());
+
+        // });
+    } catch (error) {
+        throw new Error(error);
+    }
+}
 
