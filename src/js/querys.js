@@ -1,22 +1,11 @@
 import { db } from './initialize.js';
 import { collection, addDoc, getDocs, query, orderBy } from "firebase/firestore";
 
-// const errorForm = document.getElementById("error-form");
-// const Nombre_Error = document.getElementById("Nombre_Error");
-// const Tipo_Error = document.getElementById("Tipo_Error");
-// const Codigo_Retorno = document.getElementById("Codigo_Retorno");
-// const ID_Mensaje_Error = document.getElementById("ID_Mensaje_Error");
-// const Complejidad = document.getElementById("Complejidad");
-// const Reportado_Por = document.getElementById("Reportado_Por");
-// const Fecha = document.getElementById("Fecha");
-// const Resultado_Esperado = document.getElementById("Resultado_Esperado");
-// const Resultado_Obtenido = document.getElementById("Resultado_Obtenido");
-// const Descripcion_Error = document.getElementById("Descripcion_Error");
-// const Solucion = document.getElementById("Solucion");
-// const Fuentes = document.getElementById("Fuentes");
-
 const collectionReference = collection(db, "banco")
 
+/**
+ * Carga individual de error a través de form, para insertarlo a la DB
+ */
 export const addNewError = async (e) => {
     e.preventDefault();
     const p1 = document.getElementById("Nombre_Error").value;
@@ -34,7 +23,6 @@ export const addNewError = async (e) => {
 
     if (p3 !== '') {
         addError(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12);
-        //loadError();
     } else {
         alert("Campo Codigo_Retorno vacío")
     }
@@ -44,7 +32,7 @@ export const addNewError = async (e) => {
 async function addError(nombre, tipo, codigo, id, complejidad, alumno, fecha,
     esperado, obtenido, descripcion, solucion, fuentes) {
     try {
-        const errorNew = [{
+        const errorNew = {
             Nombre_Error: nombre,
             Tipo_Error: tipo,
             Codigo_Retorno: codigo,
@@ -58,44 +46,38 @@ async function addError(nombre, tipo, codigo, id, complejidad, alumno, fecha,
             Solucion: solucion,
             Fuentes: fuentes,
             Utilidad: 0
-        }];
+        };
 
-        insert(errorNew);
-        //const response = await insert(errorNew);
-        //console.log(response);
-        //console.log("Document written with ID: ", response.id);
+        const response = await insert(errorNew);
+        console.log(response);
+        console.log("Document written with ID: ", response.id);
     } catch (error) {
         console.error(error);
     }
 }
 
-const insert = (items) => {
+/**
+ * Recibe error JSON, para insertarlo a la DB
+ */
+export const insert = async (newError) => {
     try {
-        //const response = await db.collection("banco").add(item);
-        items.forEach(async newError => {
-            const response = await addDoc(collectionReference, newError);
-            console.log(response);
-            console.log("Document written with ID: ", response.id);
-        });
-        //const response = await addDoc(collectionReference, items);
-        //return response;
+        const response = await addDoc(collectionReference, newError);
+        return response;
     } catch (error) {
         throw new Error(error);
     }
 }
 
+/**
+ * Retorna un array con todos los errores de la DB
+ */
 export const showErrors = async () => {
     try {
-        //const container = document.getElementById("container");
-        //.orderBy("ID_Mensaje_Error", "asc") 
         const q = query(collectionReference, orderBy("ID_Mensaje_Error", "asc"));
         const querySnapshot = await getDocs(q);
         return querySnapshot;
-        //console.log(querySnapshot);
         // querySnapshot.forEach((doc) => {
         //    //console.log(`${doc.id} => ${doc.data()}`);
-        //    console.log(doc.id, " => ", doc.data());
-
         // });
     } catch (error) {
         throw new Error(error);
