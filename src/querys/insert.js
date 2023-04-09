@@ -1,7 +1,7 @@
 import { db } from './initialize.js';
-import { collection, addDoc, getDocs, query, orderBy } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 
-const collectionReference = collection(db, "banco")
+const collectionReference = collection(db, "banco");
 
 /**
  * Carga individual de error a través de form, para insertarlo a la DB
@@ -67,20 +67,3 @@ export const insert = async (newError) => {
         throw new Error(error);
     }
 }
-
-/**
- * Retorna un array con todos los errores de la DB
- */
-export const showErrors = async () => {
-    try {
-        const q = query(collectionReference, orderBy("ID_Mensaje_Error", "asc"));
-        const querySnapshot = await getDocs(q);
-        return querySnapshot;
-        // querySnapshot.forEach((doc) => {
-        //    //console.log(`${doc.id} => ${doc.data()}`);
-        // });
-    } catch (error) {
-        throw new Error(error);
-    }
-}
-

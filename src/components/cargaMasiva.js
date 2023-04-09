@@ -1,6 +1,7 @@
 import React from "react";
 import * as XLSX from "xlsx";
-import { insert } from "../js/querys"
+import { insert } from "../querys/insert"
+import { refreshPage } from "../querys/utils";
 
 class CargaMasiva extends React.Component {
     state = {
@@ -40,6 +41,7 @@ class CargaMasiva extends React.Component {
             await Promise.all(this.state.arrayErrores.map(async (newError) => {
                 newError.Codigo_Retorno = String(newError.Codigo_Retorno);
                 newError.Complejidad = String(newError.Complejidad);
+                newError.Utilidad = 0;
                 const response = await insert(newError);
                 console.log(response);
                 console.log("Document written with ID: ", response.id);
@@ -49,12 +51,8 @@ class CargaMasiva extends React.Component {
                 arrayErrores: []
             })
             alert("Carga masiva finalizada");
-            this.refreshPage();
+            refreshPage();
         }
-    }
-
-    refreshPage() {
-        window.location.reload(false);
     }
 
     render() {

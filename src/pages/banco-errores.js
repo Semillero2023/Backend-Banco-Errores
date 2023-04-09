@@ -1,5 +1,5 @@
 import React from "react";
-import { showErrors } from '../js/querys.js';
+import { showErrors } from '../querys/getAllDocs';
 import ListadoErrores from "../components/listadoErrores.js";
 import CargaMasiva from "../components/cargaMasiva.js";
 import InsertError from "../components/insertError.js";

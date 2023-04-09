@@ -1,5 +1,5 @@
 import React from "react";
-import { addNewError } from '../js/querys.js';
+import { addNewError } from '../querys/insert';
 
 class InsertError extends React.Component {
 

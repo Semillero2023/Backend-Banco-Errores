@@ -19,11 +19,11 @@
 }
 
 CONSULTAS:
-- Carga individual por formulario		LISTO 30/03/2023
+- Carga individual por formulario		    LISTO 30/03/2023
 - Pagina principal -> Get Array de errores	LISTO 06/04/2023
-- Carga masiva por Excel			P
-- UPDATE de contador de Utilidad		P
-- Busquedas -> Get Array
+- Carga masiva por Excel			        LISTO 08/04/2023
+- UPDATE de contador de Utilidad		    LISTO 08/04/2023
+- Busquedas -> Get Array                    
 
 
 |* ----------------------- *|
