@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Backend-Banco-Errores/static/css/main.073c9b0a.css",
-    "main.js": "/Backend-Banco-Errores/static/js/main.33477ff3.js",
+    "main.js": "/Backend-Banco-Errores/static/js/main.ff5cb580.js",
     "static/js/787.02e20a4f.chunk.js": "/Backend-Banco-Errores/static/js/787.02e20a4f.chunk.js",
     "index.html": "/Backend-Banco-Errores/index.html",
     "main.073c9b0a.css.map": "/Backend-Banco-Errores/static/css/main.073c9b0a.css.map",
-    "main.33477ff3.js.map": "/Backend-Banco-Errores/static/js/main.33477ff3.js.map",
+    "main.ff5cb580.js.map": "/Backend-Banco-Errores/static/js/main.ff5cb580.js.map",
     "787.02e20a4f.chunk.js.map": "/Backend-Banco-Errores/static/js/787.02e20a4f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.33477ff3.js"
+    "static/js/main.ff5cb580.js"
   ]
 }
