@@ -15,7 +15,7 @@
     "Descripcion_Error" :       STRING,
     "Solucion" :                STRING,
     "Fuentes" :                 STRING (Separadas por comas),
-    "Utilidad" :                    0
+    "Utilidad" :                0
 }
 
 CONSULTAS:
@@ -23,15 +23,15 @@ CONSULTAS:
 - Pagina principal -> Get Array de errores	LISTO 06/04/2023
 - Carga masiva por Excel			        LISTO 08/04/2023
 - UPDATE de contador de Utilidad		    LISTO 08/04/2023
-- Busquedas -> Get Array                    
+- Busquedas -> Get Array                    LISTO 09/04/2023   
 
 
-|* ----------------------- *|
-|* Estructura de busquedas *|
-|* ----------------------- *|
+|* -------------------- *|
+|* Filtros de busquedas *|
+|* -------------------- *|
 
-{
-	"ID_Mensaje_Error": 	STRING,
-	"Tipo_Error":  		STRING (FS | AB - OPCIONAL),
-	"Codigo_Retorno": 	STRING (OPCIONAL)
-}
+"ID Mensaje Error": 	STRING,
+"Codigo Retorno"  :     STRING (RC),
+"File Status"     :     STRING (FS),
+"Abend"           :     STRING (AB),
+

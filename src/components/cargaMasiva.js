@@ -59,7 +59,6 @@ class CargaMasiva extends React.Component {
         return (
             <div className="conatiner mt-5">
                 <div className="row">
-                    <div className="col-md-3"></div>
                     <div className="col-md-3">
                         <input className="form-control" type="file" id="input" accept=".xls,.xlsx" onChange={this.handleChange} />
                     </div>

@@ -3,6 +3,7 @@ import { showErrors } from '../querys/getAllDocs';
 import ListadoErrores from "../components/listadoErrores.js";
 import CargaMasiva from "../components/cargaMasiva.js";
 import InsertError from "../components/insertError.js";
+import SearchErrors from "../components/searchErrors";
 
 class BancoErrores extends React.Component {
 
@@ -28,6 +29,8 @@ class BancoErrores extends React.Component {
                 <ListadoErrores 
                     errores={this.state.errores}
                 />
+                <br/>
+                <SearchErrors/>
             </div>
         );
     }

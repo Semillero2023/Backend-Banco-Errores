@@ -49,7 +49,7 @@ class ListadoErrores extends React.Component {
         return (
             <div id="container" className="container">
                 <br />
-                <table className="table table-hover">
+                <table className="table table-hover" border={2}>
                     <thead>
                         <tr className="table-secondary">
                             <th scope="col">Codigo Retorno</th>
@@ -59,7 +59,7 @@ class ListadoErrores extends React.Component {
                             <th scope="col">Fuentes</th>
                             <th scope="col">ID Mensaje Error</th>
                             <th scope="col">Nombre Error</th>
-                            <th scope="col">Reporte Error</th>
+                            <th scope="col">Reportado Por</th>
                             <th scope="col">Resultado Esperado</th>
                             <th scope="col">Resultado Obtenido</th>
                             <th scope="col">Solucion</th>
