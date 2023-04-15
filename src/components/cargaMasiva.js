@@ -39,9 +39,13 @@ class CargaMasiva extends React.Component {
             alert("No se ha encontrado ningún Excel cargado")
         } else {
             await Promise.all(this.state.arrayErrores.map(async (newError) => {
-                newError.Codigo_Retorno = String(newError.Codigo_Retorno);
-                newError.Complejidad = String(newError.Complejidad);
+                newError.Codigo_Retorno = String(newError.Codigo_Retorno).replace(/\ /g, "");;
+                newError.Complejidad = String(newError.Complejidad).replace(/\ /g, "");;
                 newError.Utilidad = 0;
+                newError.Fecha = newError.Fecha.replace(/\//g, "-");
+                if (newError.Fuentes === undefined) {
+                    newError.Fuentes = "";
+                }
                 const response = await insert(newError);
                 console.log(response);
                 console.log("Document written with ID: ", response.id);
