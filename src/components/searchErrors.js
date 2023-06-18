@@ -1,5 +1,5 @@
 import React from "react";
-import { searchMessageID, searchReturnCode } from "../querys/searchErrors";
+import { searchMessageID, searchReturnCode, searchReportadoPor } from "../querys/searchErrors";
 
 class SearchErrors extends React.Component {
     state = {
@@ -17,6 +17,11 @@ class SearchErrors extends React.Component {
                         case "IdError":
                             const responseId = await this.getErrorsByIdMessage(filter);
                             this.fillRows(responseId);
+                            break;
+                        
+                        case "Nombre":
+                            const responseNombre = await this.getErrorsByReportadoPor(filter);
+                            this.fillRows(responseNombre, true, filter);
                             break;
 
                         default:
@@ -42,9 +47,18 @@ class SearchErrors extends React.Component {
         return response
     }
 
-    fillRows = (response) => {
+    getErrorsByReportadoPor = async (filter) => {
+        const response = await searchReportadoPor(filter);
+        return response
+    }
+
+    fillRows = (response, esNombre = false, nombre = "") => {
         const filledRows = [];
+        
         response.forEach((doc) => {
+            if (esNombre && !doc.data().Reportado_Por.startsWith(nombre)) {
+                return
+            }
             filledRows.push(
                 <tr key={doc.id}>
                     <td>{doc.data().Codigo_Retorno}</td>
@@ -87,6 +101,9 @@ class SearchErrors extends React.Component {
 
                         <input type="radio" id="IdError" name="filter" value="IdError" />
                         <label htmlFor="IdError">ID Mensaje Error</label>
+
+                        <input type="radio" id="Nombre" name="filter" value="Nombre" />
+                        <label htmlFor="Nombre">Nombre de Reportador</label>
                     </div>
                 </fieldset>
                 <div className="form-group">
